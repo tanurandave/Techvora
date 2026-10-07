@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: techvora
+  datasource:
+    url: jdbc:postgresql://ep-solitary-frog-axjrgohz-pooler.c-4.us-east-2.aws.neon.tech/techvora?sslmode=require&channelBinding=require
+    username: neondb_owner
+    password: npg_uSb5Wrc0feUo
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:trainerhub90@gmail.com}
+    password: ${MAIL_PASSWORD:zqnu zccm ftxr ddsb}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+    test-connection: false
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+server:
+  port: ${PORT:8080}
+
+jwt:
+  secret: ${JWT_SECRET:traininginstitutesecretkeywhichisverylongandsecure123456789}
+  expiration: ${JWT_EXPIRATION:86400000}
+
+otp:
+  expiry:
+    minutes: ${OTP_EXPIRY_MINUTES:10}
+
